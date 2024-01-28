@@ -24,7 +24,7 @@ setup(
         "Programming Language :: Python :: 3.10",
     ],
     author="Muhammad Arshad",
-    author_email="your_email@example.com",
+    author_email="arshad@codelounge.io",
     keywords='SkipCash Python SDK, skipcash, skipcash-sdk, skipcash-python',
     url='https://codelounge.io',
     company_name="CODELOUNGE (SMC) PRIVATE LIMITED"
