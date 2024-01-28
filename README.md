@@ -48,7 +48,15 @@ from decimal import Decimal
 from skipcash.api_resources import Payment
 from skipcash.schema import PaymentInfo
 from skipcash.exceptions import PaymentResponseError, PaymentValidationError, PaymentInfoError
+from skipcash.client import SkipCash
 
+skipcash = SkipCash(
+    client_id='<your_client_id>',
+    key_id='<your_client_key_id>',
+    key_secret='<your_client_secret_key>',
+    webhook_secret='<your_webhook_secret_key>',
+    use_sandbox=True  # Set to False when moving to production
+)
 payment_info = PaymentInfo(
     key_id=skipcash.key_id,
     amount=Decimal('100.00'),
@@ -84,8 +92,18 @@ except PaymentResponseError as e:
 To retrieve payment details using a payment ID:
 
 ```python
-from skipcash.exceptions import PaymentRetrievalError
+from skipcash.client import SkipCash
+from skipcash.exceptions import PaymentRetrievalError, PaymentResponseError
+from skipcash.api_resources import Payment
 
+skipcash = SkipCash(
+    client_id='<your_client_id>',
+    key_id='<your_client_key_id>',
+    key_secret='<your_client_secret_key>',
+    webhook_secret='<your_webhook_secret_key>',
+    use_sandbox=True  # Set to False when moving to production
+)
+payment = Payment(skipcash)
 try:
     response = payment.get_payment('<payment_id>')
     print(f"Payment ID: {response.id}")
@@ -101,12 +119,19 @@ except PaymentResponseError as e:
 To validate and process webhook events:
 
 ```python
+from skipcash.client import SkipCash
 from skipcash.api_resources import Webhook
 from skipcash.exceptions import WebhookValidationError, WebhookSignatureError
 
 request_data = {}  # Your webhook payload here
 signature = ''  # Signature from the 'HTTP_AUTHORIZATION' header
-
+skipcash = SkipCash(
+    client_id='<your_client_id>',
+    key_id='<your_client_key_id>',
+    key_secret='<your_client_secret_key>',
+    webhook_secret='<your_webhook_secret_key>',
+    use_sandbox=True  # Set to False when moving to production
+)
 webhook = Webhook(client=skipcash)
 
 try:
