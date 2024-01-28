@@ -20,3 +20,11 @@
 /skipcash/utils/__pycache__/*
 /tests/__pycache__/
 /tests/__pycache__/*
+/build/
+/SkipCash_Python_SDK.egg-info/dependency_links.txt
+/SkipCash_Python_SDK.egg-info/PKG-INFO
+/SkipCash_Python_SDK.egg-info/requires.txt
+/dist/SkipCash Python SDK-0.0.1.tar.gz
+/dist/SkipCash_Python_SDK-0.0.1-py3-none-any.whl
+/SkipCash_Python_SDK.egg-info/SOURCES.txt
+/SkipCash_Python_SDK.egg-info/top_level.txt
