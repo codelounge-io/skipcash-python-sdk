@@ -1,9 +1,13 @@
 from setuptools import setup, find_packages
+with open("README.md", "r", encoding="utf-8") as fh:
+    long_description = fh.read()
 
 setup(
     name="skipcash",
     version="0.0.2",
     packages=find_packages(),
+    long_description_content_type='text/markdown',
+    long_description=long_description,
     description="The SkipCash SDK for Python enables developers to easily integrate SkipCash payment services into their Python applications.",
     install_requires=[
         "annotated-types",
