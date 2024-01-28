@@ -28,3 +28,5 @@
 /dist/SkipCash_Python_SDK-0.0.1-py3-none-any.whl
 /SkipCash_Python_SDK.egg-info/SOURCES.txt
 /SkipCash_Python_SDK.egg-info/top_level.txt
+/skipcash.egg-info/
+/dist/

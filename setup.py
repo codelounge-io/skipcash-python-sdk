@@ -1,8 +1,8 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="SkipCash Python SDK",
-    version="0.0.1",
+    name="skipcash",
+    version="0.0.2",
     packages=find_packages(),
     description="The SkipCash SDK for Python enables developers to easily integrate SkipCash payment services into their Python applications.",
     install_requires=[
