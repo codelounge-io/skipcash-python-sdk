@@ -15,6 +15,7 @@ class Payment:
     """
     def __init__(self, client: SkipCash):
         self.client = client
+        self.response_handler = None
 
     def create_payment(self, payment_info: PaymentInfo):
         """
@@ -39,9 +40,9 @@ class Payment:
         data = payment_info.to_skipcash_dict()
         response = create(self.client, "/api/v1/payments", data)
         response_data = response.json()
-        response_handler = PaymentResponseHandler(response_data)
+        self.response_handler = PaymentResponseHandler(response_data)
         try:
-            payment_response: PaymentResponse = response_handler.process_response()
+            payment_response: PaymentResponse = self.response_handler.process_response()
             return payment_response
         except (PaymentResponseError, PaymentValidationError) as e:
             raise e
